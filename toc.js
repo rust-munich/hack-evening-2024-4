@@ -10,7 +10,7 @@ class MDBookSidebarScrollbox extends HTMLElement {
     connectedCallback() {
         this.innerHTML = '<ol class="chapter"><li class="chapter-item expanded "><a href="00_agenda.html"><strong aria-hidden="true">1.</strong> Agenda</a></li><li class="chapter-item expanded "><a href="01_intro.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="01_opportunities/SUMMARY.html"><strong aria-hidden="true">3.</strong> Learning Opportunities</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_opportunities/01_cli.html"><strong aria-hidden="true">3.1.</strong> CLI</a></li><li class="chapter-item expanded "><a href="01_opportunities/02_threading.html"><strong aria-hidden="true">3.2.</strong> Threading</a></li><li class="chapter-item expanded "><a href="01_opportunities/03_optimization-ideas.html"><strong aria-hidden="true">3.3.</strong> Other</a></li></ol></li><li class="chapter-item expanded "><a href="02_submission.html"><strong aria-hidden="true">4.</strong> Submission</a></li><li class="chapter-item expanded "><a href="03_end.html"><strong aria-hidden="true">5.</strong> Conclusion</a></li><li class="chapter-item expanded "><a href="04_feedback.html"><strong aria-hidden="true">6.</strong> Feedback</a></li><li class="chapter-item expanded "><a href="20_leaderboard/SUMMARY.html"><strong aria-hidden="true">7.</strong> Leaderboard</a></li></ol>';
         // Set the current, active page, and reveal it if it's hidden
-        let current_page = document.location.href.toString();
+        let current_page = document.location.href.toString().split("#")[0].split("?")[0];
         if (current_page.endsWith("/")) {
             current_page += "index.html";
         }
